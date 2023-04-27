@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>String</mat-label>
+    <input matInput formControlName="string1" placeholder="Enter String" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Textarea</mat-label>
+    <textarea
+      matInput
+      formControlName="textarea1"
+      placeholder="Enter text..."
+    ></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Select</mat-label>
+    <mat-select formControlName="select1">
+      <mat-option *ngIf="!options_select1">
+        Loading....
+      </mat-option>
+      <mat-option *ngFor="let option of options_select1" [value]="option.id">
+        {{ option.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <mat-label>Options:</mat-label>
+    <span *ngIf="!options_radio1"> Loading...</span>
+    <mat-radio-group formControlName="option1">
+      <mat-radio-button *ngFor="let option of options_radio1" [value]="option.id">
+        {{ option.title }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+</form>
