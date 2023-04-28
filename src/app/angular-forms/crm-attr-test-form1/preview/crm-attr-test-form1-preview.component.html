@@ -9,10 +9,22 @@
   </tr>
   <tr>
     <td>Select</td>
-    <td>{{ values.select1 }}</td>
+    <td>
+      {{
+        refs.select1
+          ? refs.select1[values.select1] || values.select1
+          : values.select1
+      }}
+    </td>
   </tr>
   <tr>
     <td>Options</td>
-    <td>{{ values.option1 }}</td>
+    <td>
+      {{
+        refs.radio1
+          ? refs.radio1[values.option1] || values.option1
+          : values.option1
+      }}
+    </td>
   </tr>
 </table>

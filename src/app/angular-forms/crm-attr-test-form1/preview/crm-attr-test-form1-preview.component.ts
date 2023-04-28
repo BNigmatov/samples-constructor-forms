@@ -16,14 +16,13 @@ import { ICrmAttrTestForm1 } from '../crm-attr-test-form1.interface';
 export class CrmAttrTestForm1Component implements OnInit {
   @Input() values: ICrmAttrTestForm1;
 
-  options_select1: any[];
-  options_radio1: any[];
+  refs: any = {};
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit() {
     setTimeout(() => {
-      this.options_select1 = [
+      const options_select1 = [
         {
           id: '01',
           title: 'Select 01',
@@ -33,11 +32,15 @@ export class CrmAttrTestForm1Component implements OnInit {
           title: 'Select 02',
         },
       ];
+      this.refs.select1 = options_select1.reduce((obj, option) => {
+        obj[option.id] = option.title;
+        return obj;
+      }, {} as any);
       this._changeDetectorRef.markForCheck();
     }, 3_000);
 
     setTimeout(() => {
-      this.options_radio1 = [
+      const options_radio1 = [
         {
           id: '01',
           title: 'Option 01',
@@ -47,6 +50,11 @@ export class CrmAttrTestForm1Component implements OnInit {
           title: 'Option 02',
         },
       ];
+      this.refs.radio1 = options_radio1.reduce((obj, option) => {
+        obj[option.id] = option.title;
+        return obj;
+      }, {} as any);
+
       this._changeDetectorRef.markForCheck();
     }, 2_000);
   }
