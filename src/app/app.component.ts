@@ -33,6 +33,10 @@ export class AppComponent {
         ready.patch(sampleValues);
       }
     }, 700);
+
+    setTimeout(() => {
+      this.submit();
+    }, 3_000);
   }
 
   submit() {

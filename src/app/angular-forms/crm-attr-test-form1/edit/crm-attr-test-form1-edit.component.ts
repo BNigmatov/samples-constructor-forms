@@ -7,15 +7,15 @@ import {
   Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IFlexyFormReady } from '../form.interfaces';
+import { IFlexyFormReady } from '../../form.interfaces';
 
 @Component({
-  selector: 'crm-attr-test-form1',
-  styleUrls: ['crm-attr-test-form1.component.scss'],
-  templateUrl: 'crm-attr-test-form1.component.html',
+  selector: 'crm-attr-test-form1-edit',
+  styleUrls: ['crm-attr-test-form1-edit.component.scss'],
+  templateUrl: 'crm-attr-test-form1-edit.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CrmAttrTestForm1Component implements OnInit {
+export class CrmAttrTestForm1EditComponent implements OnInit {
   @Output() formReady: EventEmitter<IFlexyFormReady> =
     new EventEmitter<IFlexyFormReady>();
 
