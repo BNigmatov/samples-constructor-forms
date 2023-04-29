@@ -1,7 +1,9 @@
 <div>Sample Header</div>
 
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <crm-attr-test-form1-edit (formReady)="initForm($event)"></crm-attr-test-form1-edit>
+  <form-edit-crm-attr-test-form1
+    (formReady)="initForm($event)"
+  ></form-edit-crm-attr-test-form1>
 
   <div>
     <button
@@ -17,8 +19,11 @@
 </form>
 
 <div *ngIf="formValues">
-  <crm-attr-test-form1-preview [values]="formValues"></crm-attr-test-form1-preview>
-  <pre>FormValues = {{ formValues | json }}</pre>
+  <h3>Preview:</h3>
+  <form-preview-crm-attr-test-form1
+    [values]="formValues"
+  ></form-preview-crm-attr-test-form1>
+  <pre>Debug: FormValues = {{ formValues | json }}</pre>
 </div>
 
 <div>Sample Footer</div>

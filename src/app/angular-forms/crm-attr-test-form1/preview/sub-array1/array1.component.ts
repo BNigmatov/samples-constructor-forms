@@ -5,16 +5,16 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
-import { IFormCrmAttrTestForm1 } from '../interfaces/crm-attr-test-form1.interface';
+import { IFormCrmAttrTestForm1Array1 } from '../../interfaces/crm-attr-test-form1-array1.interface';
 
 @Component({
-  selector: 'form-preview-crm-attr-test-form1',
-  styleUrls: ['crm-attr-test-form1-preview.component.scss'],
-  templateUrl: 'crm-attr-test-form1-preview.component.html',
+  selector: 'form-preview-sub-crm-attr-test-form1-array1',
+  styleUrls: ['array1.component.scss'],
+  templateUrl: 'array1.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormPreviewCrmAttrTestForm1Component implements OnInit {
-  @Input() values: IFormCrmAttrTestForm1;
+export class FormPreviewSubCrmAttrTestForm1Array1Component implements OnInit {
+  @Input() values: IFormCrmAttrTestForm1Array1;
 
   refs: any = {};
 

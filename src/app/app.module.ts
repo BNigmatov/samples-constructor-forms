@@ -4,8 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CrmAttrTestForm1EditModule } from './angular-forms/crm-attr-test-form1/edit';
-import { CrmAttrTestForm1PreviewModule } from './angular-forms/crm-attr-test-form1/preview';
+import { FormEditCrmAttrTestForm1Module } from './angular-forms/crm-attr-test-form1/edit';
+import { FormPreviewCrmAttrTestForm1Module } from './angular-forms/crm-attr-test-form1/preview';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -18,8 +18,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ReactiveFormsModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    CrmAttrTestForm1EditModule,
-    CrmAttrTestForm1PreviewModule,
+    FormEditCrmAttrTestForm1Module,
+    FormPreviewCrmAttrTestForm1Module,
   ],
   bootstrap: [AppComponent],
 })

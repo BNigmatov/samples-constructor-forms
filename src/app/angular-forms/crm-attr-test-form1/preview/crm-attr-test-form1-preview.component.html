@@ -11,7 +11,7 @@
     <td>Select</td>
     <td>
       {{
-        refs.select1
+        refs.select1 && values.select1
           ? refs.select1[values.select1] || values.select1
           : values.select1
       }}
@@ -21,10 +21,24 @@
     <td>Options</td>
     <td>
       {{
-        refs.radio1
+        refs.radio1 && values.option1
           ? refs.radio1[values.option1] || values.option1
           : values.option1
       }}
+    </td>
+  </tr>
+  <tr *ngIf="values.object1">
+    <td colspan="2">
+      <h3>Object 1</h3>
+      <form-preview-sub-crm-attr-test-form1-object1 [values]="values.object1"></form-preview-sub-crm-attr-test-form1-object1>
+    </td>
+  </tr>
+  <tr *ngIf="values.array1">
+    <td colspan="2">
+      <h3>Array 1</h3>
+      <div *ngFor="let arr of values.array1">
+        <form-preview-sub-crm-attr-test-form1-array1 [values]="arr"></form-preview-sub-crm-attr-test-form1-array1>
+      </div>
     </td>
   </tr>
 </table>

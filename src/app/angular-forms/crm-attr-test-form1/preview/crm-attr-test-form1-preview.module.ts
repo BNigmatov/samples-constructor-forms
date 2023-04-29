@@ -8,7 +8,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 
-import { CrmAttrTestForm1Component } from './crm-attr-test-form1-preview.component';
+import { FormPreviewCrmAttrTestForm1Component } from './crm-attr-test-form1-preview.component';
+import { FormPreviewSubCrmAttrTestForm1Object1Component } from './sub-object1/object1.component';
+import { FormPreviewSubCrmAttrTestForm1Array1Component } from './sub-array1/array1.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,11 @@ import { CrmAttrTestForm1Component } from './crm-attr-test-form1-preview.compone
     MatSelectModule,
     MatRadioModule,
   ],
-  declarations: [CrmAttrTestForm1Component],
-  exports: [CrmAttrTestForm1Component],
+  declarations: [
+    FormPreviewCrmAttrTestForm1Component,
+    FormPreviewSubCrmAttrTestForm1Object1Component,
+    FormPreviewSubCrmAttrTestForm1Array1Component,
+  ],
+  exports: [FormPreviewCrmAttrTestForm1Component],
 })
-export class CrmAttrTestForm1PreviewModule {}
+export class FormPreviewCrmAttrTestForm1Module {}

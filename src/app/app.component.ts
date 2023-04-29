@@ -26,6 +26,17 @@ export class AppComponent {
         textarea1: 'init-text-textarea1',
         select1: '02',
         option1: '02',
+        object1: {
+          obj1_str1: 'Object String 1',
+          obj1_num1: 111,
+        },
+        array1: [{
+          arr1_str1: 'Array String 1',
+          arr1_num1: 111,
+        }, {
+          arr1_str1: 'Array String 2',
+          arr1_num1: 222,
+        }],
       };
 
       this.form.patchValue(sampleValues);

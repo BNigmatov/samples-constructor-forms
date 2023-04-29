@@ -7,15 +7,15 @@ import {
   Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IFlexyFormReady } from '../../form.interfaces';
+import { IFlexyFormReady } from '../../../form.interfaces';
 
 @Component({
-  selector: 'form-edit-crm-attr-test-form1',
-  styleUrls: ['crm-attr-test-form1-edit.component.scss'],
-  templateUrl: 'crm-attr-test-form1-edit.component.html',
+  selector: 'form-edit-sub-crm-attr-test-form1-object1',
+  styleUrls: ['object1.component.scss'],
+  templateUrl: 'object1.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormEditCrmAttrTestForm1Component implements OnInit {
+export class FormEditSubCrmAttrTestForm1Object1Component implements OnInit {
   @Output() formReady: EventEmitter<IFlexyFormReady> =
     new EventEmitter<IFlexyFormReady>();
 
@@ -26,16 +26,14 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {
     this.form = new FormGroup({
-      string1: new FormControl('', [
+      obj1_str1: new FormControl('', [
         Validators.required,
         Validators.minLength(1),
       ]),
-      textarea1: new FormControl('', [
+      obj1_num1: new FormControl(0, [
         Validators.required,
-        Validators.maxLength(1111),
+        Validators.max(999),
       ]),
-      select1: new FormControl('', [Validators.required]),
-      option1: new FormControl('', [Validators.required]),
     });
   }
 
@@ -78,13 +76,5 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
 
   patchForm(values: any) {
     console.log('PatchValues', values);
-  }
-
-  initSubObject(name: string, ready: IFlexyFormReady) {
-    this.form.setControl(name, ready.form);
-  }
-
-  initSubForm(name: string, ready: IFlexyFormReady) {
-    this.form.setControl(name, ready.form);
   }
 }

@@ -16,9 +16,7 @@
   <mat-form-field appearance="outline">
     <mat-label>Select</mat-label>
     <mat-select formControlName="select1">
-      <mat-option *ngIf="!options_select1">
-        Loading....
-      </mat-option>
+      <mat-option *ngIf="!options_select1"> Loading.... </mat-option>
       <mat-option *ngFor="let option of options_select1" [value]="option.id">
         {{ option.title }}
       </mat-option>
@@ -29,9 +27,26 @@
     <mat-label>Options:</mat-label>
     <span *ngIf="!options_radio1"> Loading...</span>
     <mat-radio-group formControlName="option1">
-      <mat-radio-button *ngFor="let option of options_radio1" [value]="option.id">
+      <mat-radio-button
+        *ngFor="let option of options_radio1"
+        [value]="option.id"
+      >
         {{ option.title }}
       </mat-radio-button>
     </mat-radio-group>
+  </div>
+
+  <div>
+    <h2>Object 1:</h2>
+    <form-edit-sub-crm-attr-test-form1-object1
+      (formReady)="initSubObject('object1',$event)"
+    ></form-edit-sub-crm-attr-test-form1-object1>
+  </div>
+
+  <div>
+    <h2>Array 1:</h2>
+    <form-edit-sub-crm-attr-test-form1-array1
+      (formReady)="initSubForm('array1',$event)"
+    ></form-edit-sub-crm-attr-test-form1-array1>
   </div>
 </form>
