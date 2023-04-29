@@ -3,12 +3,13 @@ import {
   ChangeDetectorRef,
   Component,
   EventEmitter,
+  Input,
   OnInit,
   Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { IFlexyFormReady } from '../../form.interfaces';
+import { IFlexyFormOptions, IFlexyFormReady } from '../../form.interfaces';
 import { FormEditCrmAttrTestForm1Join1DialogComponent } from './sub-join1/join1.component';
 
 @Component({
@@ -18,6 +19,7 @@ import { FormEditCrmAttrTestForm1Join1DialogComponent } from './sub-join1/join1.
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormEditCrmAttrTestForm1Component implements OnInit {
+  @Input() options?: IFlexyFormOptions = {};
   @Output() formReady: EventEmitter<IFlexyFormReady> =
     new EventEmitter<IFlexyFormReady>();
 

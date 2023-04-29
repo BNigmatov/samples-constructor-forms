@@ -3,6 +3,7 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <form-edit-crm-attr-test-form1
     (formReady)="initForm($event)"
+    [options]="{ flexLeft: 40 }"
   ></form-edit-crm-attr-test-form1>
 
   <div>
