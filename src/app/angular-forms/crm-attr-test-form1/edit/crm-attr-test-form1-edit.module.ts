@@ -14,9 +14,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 import { FormEditCrmAttrTestForm1Component } from './crm-attr-test-form1-edit.component';
-import { FormEditSubCrmAttrTestForm1Object1Component } from './sub-object1/object1.component';
-import { FormEditSubCrmAttrTestForm1Array1Component } from './sub-array1/array1.component';
-import { FormEditCrmAttrTestForm1Join1DialogComponent } from './sub-join1/join1.component';
+import { FormEditSubCrmAttrTestForm1Object1Module } from './sub-object1/object1.module';
+import { FormEditSubCrmAttrTestForm1Array1Module } from './sub-array1/array1.module';
+import { FormEditSubCrmAttrTestForm1Join1Module } from './sub-join1/join1.module';
 
 @NgModule({
   imports: [
@@ -33,13 +33,11 @@ import { FormEditCrmAttrTestForm1Join1DialogComponent } from './sub-join1/join1.
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
+    FormEditSubCrmAttrTestForm1Object1Module,
+    FormEditSubCrmAttrTestForm1Array1Module,
+    FormEditSubCrmAttrTestForm1Join1Module,
   ],
-  declarations: [
-    FormEditCrmAttrTestForm1Component,
-    FormEditSubCrmAttrTestForm1Object1Component,
-    FormEditSubCrmAttrTestForm1Array1Component,
-    FormEditCrmAttrTestForm1Join1DialogComponent,
-  ],
+  declarations: [FormEditCrmAttrTestForm1Component],
   exports: [FormEditCrmAttrTestForm1Component],
 })
 export class FormEditCrmAttrTestForm1Module {}
