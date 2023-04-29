@@ -10,10 +10,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 import { FormEditCrmAttrTestForm1Component } from './crm-attr-test-form1-edit.component';
 import { FormEditSubCrmAttrTestForm1Object1Component } from './sub-object1/object1.component';
 import { FormEditSubCrmAttrTestForm1Array1Component } from './sub-array1/array1.component';
+import { FormEditCrmAttrTestForm1Join1DialogComponent } from './sub-join1/join1.component';
 
 @NgModule({
   imports: [
@@ -28,11 +31,14 @@ import { FormEditSubCrmAttrTestForm1Array1Component } from './sub-array1/array1.
     MatNativeDateModule,
     MatDatepickerModule,
     MatIconModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   declarations: [
     FormEditCrmAttrTestForm1Component,
     FormEditSubCrmAttrTestForm1Object1Component,
     FormEditSubCrmAttrTestForm1Array1Component,
+    FormEditCrmAttrTestForm1Join1DialogComponent,
   ],
   exports: [FormEditCrmAttrTestForm1Component],
 })

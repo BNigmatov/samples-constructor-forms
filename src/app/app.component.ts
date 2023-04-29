@@ -43,6 +43,7 @@ export class AppComponent {
             arr1_num1: 222,
           },
         ],
+        join1: '03',
       };
       this.formValues = sampleValues; // TEST
 

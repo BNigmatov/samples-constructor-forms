@@ -44,4 +44,9 @@ export interface IFormCrmAttrTestForm1 {
    * Label Array 1
    */
   array1?: IFormCrmAttrTestForm1Array1[];
+
+  /**
+   * Label Join 1
+   */
+  join1?: string;
 }

@@ -82,5 +82,10 @@
         }
       ]
     }
+  },
+  {
+    "name": "join1",
+    "title": "Label Join 1",
+    "type": "string"
   }
 ]

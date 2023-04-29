@@ -7,7 +7,9 @@ import {
   Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { IFlexyFormReady } from '../../form.interfaces';
+import { FormEditCrmAttrTestForm1Join1DialogComponent } from './sub-join1/join1.component';
 
 @Component({
   selector: 'form-edit-crm-attr-test-form1',
@@ -24,7 +26,10 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
   options_select1: any[];
   options_radio1: any[];
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef) {
+  constructor(
+    public dialog: MatDialog,
+    private _changeDetectorRef: ChangeDetectorRef
+  ) {
     this.form = new FormGroup({
       string1: new FormControl('', [
         Validators.required,
@@ -35,9 +40,10 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
         Validators.maxLength(1111),
       ]),
       number1: new FormControl(0, [Validators.required]),
-      date1: new FormControl('', [Validators.required]),
-      select1: new FormControl('', [Validators.required]),
-      option1: new FormControl('', [Validators.required]),
+      date1: new FormControl(''),
+      select1: new FormControl(''),
+      option1: new FormControl(''),
+      join1: new FormControl(''),
     });
   }
 
@@ -88,5 +94,20 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
 
   initSubForm(name: string, ready: IFlexyFormReady) {
     this.form.setControl(name, ready.form);
+  }
+
+  openDialogJoin1(): void {
+    const dialogRef = this.dialog.open(
+      FormEditCrmAttrTestForm1Join1DialogComponent,
+      {
+        data: {
+          ppp: 111,
+        },
+      }
+    );
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed', result);
+    });
   }
 }
