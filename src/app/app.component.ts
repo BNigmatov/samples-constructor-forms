@@ -25,13 +25,13 @@ export class AppComponent {
       const sampleValues: IFormCrmAttrTestForm1 = {
         string1: 'Test String1',
         textarea1: 'Test Text1',
-        number1: 111,
+        number1: 1,
         date1: new Date('2023-01-01'),
         select1: '02',
         option1: '02',
         object1: {
           obj1_str1: 'Test Object String 1',
-          obj1_num1: 111,
+          obj1_num1: 11,
         },
         array1: [
           {
