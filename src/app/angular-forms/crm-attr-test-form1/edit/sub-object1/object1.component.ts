@@ -31,7 +31,6 @@ export class FormEditSubCrmAttrTestForm1Object1Component implements OnInit {
         Validators.minLength(1),
       ]),
       obj1_num1: new FormControl(0, [
-        Validators.required,
         Validators.max(999),
       ]),
     });

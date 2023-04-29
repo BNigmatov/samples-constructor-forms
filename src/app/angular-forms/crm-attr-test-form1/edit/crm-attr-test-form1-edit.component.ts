@@ -34,6 +34,8 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
         Validators.required,
         Validators.maxLength(1111),
       ]),
+      number1: new FormControl(0, [Validators.required]),
+      date1: new FormControl('', [Validators.required]),
       select1: new FormControl('', [Validators.required]),
       option1: new FormControl('', [Validators.required]),
     });

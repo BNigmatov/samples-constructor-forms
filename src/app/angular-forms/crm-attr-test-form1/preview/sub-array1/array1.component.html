@@ -1,10 +1,14 @@
 <table width="100%">
   <tr>
-    <td>String</td>
+    <td i18n="@@form-label-crm-attr-test-form1-array1-arr1_str1">
+      Label Array 1 - String 1
+    </td>
     <td>{{ values.arr1_str1 }}</td>
   </tr>
-  <tr>
-    <td>Number</td>
+  <tr *ngIf="values.arr1_num1">
+    <td i18n="@@form-label-crm-attr-test-form1-array1-arr1_num1">
+      Label Array 1 - Number 1
+    </td>
     <td>{{ values.arr1_num1 }}</td>
   </tr>
 </table>

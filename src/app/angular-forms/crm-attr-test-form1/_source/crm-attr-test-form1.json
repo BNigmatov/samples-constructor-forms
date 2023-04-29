@@ -1,0 +1,86 @@
+[
+  {
+    "name": "string1",
+    "title": "Label String 1",
+    "type": "string",
+    "required": true,
+    "placeholder": "Placeholder String 1",
+    "options": {
+      "exclusiveMaximum": true
+    }
+  },
+  {
+    "name": "textarea1",
+    "title": "Label Textarea 1",
+    "type": "textarea",
+    "placeholder": "Placeholder Textarea 1",
+    "required": true
+  },
+  {
+    "name": "number1",
+    "title": "Label Number 1",
+    "placeholder": "Placeholder Number 1",
+    "type": "number"
+  },
+  {
+    "name": "date1",
+    "title": "Label Date 1",
+    "placeholder": "Placeholder Date 1",
+    "hint": "дд.мм.гггг",
+    "type": "date"
+  },
+  {
+    "name": "select1",
+    "title": "Label Select 1",
+    "placeholder": "Placeholder Select 1",
+    "type": "string"
+  },
+  {
+    "name": "option1",
+    "title": "Label Radio 1",
+    "type": "string"
+  },
+  {
+    "name": "object1",
+    "title": "Label Object 1",
+    "type": "object",
+    "properties": [
+      {
+        "name": "obj1_str1",
+        "title": "Label Object 1 - String 1",
+        "type": "string",
+        "placeholder": "Placeholder Object 1 - String 1",
+        "required": true
+      },
+      {
+        "name": "obj1_num1",
+        "title": "Label Object 1 - Number 1",
+        "placeholder": "Placeholder Object 1 - Number 1",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "name": "array1",
+    "title": "Label Array 1",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": [
+        {
+          "name": "arr1_str1",
+          "title": "Label Array 1 - String 1",
+          "placeholder": "Placeholder Array 1 - String 1",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "arr1_num1",
+          "title": "Label Array 1 - Number 1",
+          "placeholder": "Placeholder Array 1 - Number 1",
+          "type": "number"
+        }
+      ]
+    }
+  }
+]

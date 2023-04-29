@@ -1,21 +1,58 @@
 <form [formGroup]="form">
   <mat-form-field appearance="outline">
-    <mat-label>String</mat-label>
-    <input matInput formControlName="string1" placeholder="Enter String" />
+    <mat-label i18n="@@form-label-crm-attr-test-form1-string1">
+      Label String 1
+    </mat-label>
+    <input
+      matInput
+      formControlName="string1"
+      placeholder=" Placeholder String 1 "
+      i18n-placeholder="@@form-placeholder-crm-attr-test-form1-string1"
+    />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Textarea</mat-label>
+    <mat-label i18n="@@form-label-crm-attr-test-form1-textarea1">
+      Label Textarea 1
+    </mat-label>
     <textarea
       matInput
       formControlName="textarea1"
-      placeholder="Enter text..."
+      placeholder=" Placeholder Textarea 1 "
+      i18n-placeholder="@@form-placeholder-crm-attr-test-form1-textarea1"
     ></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Select</mat-label>
-    <mat-select formControlName="select1">
+    <mat-label i18n="@@form-label-crm-attr-test-form1-number1">
+      Label Number 1
+    </mat-label>
+    <textarea
+      matInput
+      formControlName="number1"
+      placeholder=" Placeholder Number 1 "
+      i18n-placeholder="@@form-placeholder-crm-attr-test-form1-number1"
+    ></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label i18n="@@form-label-crm-attr-test-form1-date1">
+      Label Date 1
+    </mat-label>
+    <input matInput formControlName="date1" [matDatepicker]="picker_date1" placeholder=" Placeholder Date 1 " i18n-placeholder="@@form-placeholder-crm-attr-test-form1-date1" />
+    <mat-hint i18n="@@form-hint-crm-attr-test-form1-date1"> дд.мм.гггг </mat-hint>
+    <mat-datepicker-toggle
+      matIconSuffix
+      [for]="picker_date1"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #picker_date1></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label i18n="@@form-label-crm-attr-test-form1-select1">
+      Label Select 1
+    </mat-label>
+    <mat-select formControlName="select1" placeholder=" Placeholder Select 1 " i18n-placeholder="@@form-placeholder-crm-attr-test-form1-select1">
       <mat-option *ngIf="!options_select1"> Loading.... </mat-option>
       <mat-option *ngFor="let option of options_select1" [value]="option.id">
         {{ option.title }}
@@ -24,7 +61,9 @@
   </mat-form-field>
 
   <div>
-    <mat-label>Options:</mat-label>
+    <mat-label i18n="@@form-label-crm-attr-test-form1-option1">
+      Label Radio 1
+    </mat-label>
     <span *ngIf="!options_radio1"> Loading...</span>
     <mat-radio-group formControlName="option1">
       <mat-radio-button
@@ -37,16 +76,24 @@
   </div>
 
   <div>
-    <h2>Object 1:</h2>
+    <h2>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-object1">
+        Label Object 1
+      </ng-container>
+    </h2>
     <form-edit-sub-crm-attr-test-form1-object1
-      (formReady)="initSubObject('object1',$event)"
+      (formReady)="initSubObject('object1', $event)"
     ></form-edit-sub-crm-attr-test-form1-object1>
   </div>
 
   <div>
-    <h2>Array 1:</h2>
+    <h2>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-array1">
+        Label Array 1
+      </ng-container>
+    </h2>
     <form-edit-sub-crm-attr-test-form1-array1
-      (formReady)="initSubForm('array1',$event)"
+      (formReady)="initSubForm('array1', $event)"
     ></form-edit-sub-crm-attr-test-form1-array1>
   </div>
 </form>

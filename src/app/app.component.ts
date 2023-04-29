@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { IFlexyFormReady } from './angular-forms/form.interfaces';
+import { IFormCrmAttrTestForm1 } from './angular-forms/crm-attr-test-form1/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -21,23 +22,29 @@ export class AppComponent {
     this.form = ready.form;
 
     setTimeout(() => {
-      const sampleValues: any = {
-        string1: 'init-text-string1',
-        textarea1: 'init-text-textarea1',
+      const sampleValues: IFormCrmAttrTestForm1 = {
+        string1: 'Test String1',
+        textarea1: 'Test Text1',
+        number1: 111,
+        date1: new Date('2023-01-01'),
         select1: '02',
         option1: '02',
         object1: {
-          obj1_str1: 'Object String 1',
+          obj1_str1: 'Test Object String 1',
           obj1_num1: 111,
         },
-        array1: [{
-          arr1_str1: 'Array String 1',
-          arr1_num1: 111,
-        }, {
-          arr1_str1: 'Array String 2',
-          arr1_num1: 222,
-        }],
+        array1: [
+          {
+            arr1_str1: 'Test Array String 1',
+            arr1_num1: 111,
+          },
+          {
+            arr1_str1: 'Test Array String 2',
+            arr1_num1: 222,
+          },
+        ],
       };
+      this.formValues = sampleValues; // TEST
 
       this.form.patchValue(sampleValues);
       if (ready.patch) {
