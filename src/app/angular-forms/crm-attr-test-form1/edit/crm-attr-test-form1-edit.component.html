@@ -73,8 +73,10 @@
   </mat-form-field>
 
   <div class="form-radio">
-    <mat-label i18n="@@form-label-crm-attr-test-form1-option1">
-      Label Radio 1
+    <mat-label>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-option1">
+        Label Radio 1
+      </ng-container>:
     </mat-label>
     <span *ngIf="!options_radio1"> Loading...</span>
     <mat-radio-group formControlName="option1">
@@ -91,7 +93,7 @@
     <h2>
       <ng-container i18n="@@form-label-crm-attr-test-form1-object1">
         Label Object 1
-      </ng-container>
+      </ng-container>:
     </h2>
     <form-edit-sub-crm-attr-test-form1-object1
       (formReady)="initSubObject('object1', $event)"
@@ -102,7 +104,7 @@
     <h2>
       <ng-container i18n="@@form-label-crm-attr-test-form1-array1">
         Label Array 1
-      </ng-container>
+      </ng-container>:
     </h2>
     <div>
       <form-edit-sub-crm-attr-test-form1-array1
@@ -111,16 +113,17 @@
     </div>
   </div>
 
-  <div class="form-join">
-    <h2>
+  <div class="flex">
+    <h2 class="w-40">
       <ng-container i18n="@@form-label-crm-attr-test-form1-join1">
         Label Join 1
-      </ng-container>
+      </ng-container>:
     </h2>
     <div>
-      <button type="button" mat-raised-button (click)="openDialogJoin1()" color="primary">
+      <span>Text Value</span>
+      <button type="button" mat-raised-button (click)="openDialogJoin1()" color="primary" class="ml-3">
         <mat-icon fontIcon="launch"></mat-icon>
-        <ng-container i18n="@@form-button-crm-attr-test-form1-join1"> Open </ng-container>
+        <ng-container i18n="@@form-button-crm-attr-test-form1-join1"> Change </ng-container>
       </button>
     </div>
   </div>
