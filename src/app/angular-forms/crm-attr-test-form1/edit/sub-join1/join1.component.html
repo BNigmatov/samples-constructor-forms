@@ -1,9 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <h1 mat-dialog-title i18n="@@form-title-crm-attr-test-form1-join1"> Label Join 1 </h1>
+  <h1 mat-dialog-title>
+    <ng-container i18n="@@form-title-crm-attr-test-form1-join1">Label Join 1</ng-container>
+  </h1>
   <div mat-dialog-content>
     <p i18n="@@form-question-crm-attr-test-form1-join1"> What's your name? </p>
     <mat-form-field appearance="outline">
-      <mat-label i18n="@@form-label-crm-attr-test-form1-join1"> Label Join 1 </mat-label>
+      <mat-label>
+        <ng-container i18n="@@form-label-crm-attr-test-form1-join1">Label Join 1</ng-container>
+      </mat-label>
       <input matInput cdkFocusInitial formControlName="result">
     </mat-form-field>
   </div>
