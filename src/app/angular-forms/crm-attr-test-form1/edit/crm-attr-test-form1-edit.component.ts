@@ -7,7 +7,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { IFlexyFormOptions, IFlexyFormReady } from '../../form.interfaces';
 import { FormEditCrmAttrTestForm1Join1DialogComponent } from './sub-join1/join1.component';
@@ -24,6 +24,7 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
     new EventEmitter<IFlexyFormReady>();
 
   form: FormGroup;
+  formArray1: FormArray;
 
   options_select1: any[];
   options_radio1: any[];
@@ -32,6 +33,13 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
     public dialog: MatDialog,
     private _changeDetectorRef: ChangeDetectorRef
   ) {
+    this.formArray1 = new FormArray([
+      new FormGroup({
+        arr1_str1: new FormControl('arr1_str1'),
+        arr1_num1: new FormControl('11111111111111'),
+      }),
+    ]);
+
     this.form = new FormGroup({
       string1: new FormControl('', [
         Validators.required,
@@ -45,6 +53,8 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
       date1: new FormControl(''),
       select1: new FormControl(''),
       option1: new FormControl(''),
+      object1: new FormControl({}),
+      array1: this.formArray1,
       join1: new FormControl(''),
     });
   }
@@ -83,11 +93,20 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
         },
       ];
       this._changeDetectorRef.markForCheck();
-    }, 2_000);
+    }, 1_000);
   }
 
   patchForm(values: any) {
     console.log('PatchValues', values);
+    if (values.array1) {
+      this.formArray1.clear();
+      for (let arr of values.array1) {
+        this.formArray1.push( new FormGroup({
+          arr1_str1: new FormControl(arr.arr1_str1 || ''),
+          arr1_num1: new FormControl(arr.arr1_num1 || 0),
+        }));
+      }
+    }
   }
 
   initSubObject(name: string, ready: IFlexyFormReady) {
@@ -109,7 +128,23 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
     );
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed', result);
+      console.log('The dialog was closed. Result=', result);
     });
+  }
+
+  // get bindArray1() {
+  //   return this.form.controls['array1'] as FormArray;
+  // }
+
+  delElArray1(index: number): void {
+    this.formArray1.removeAt(index);
+  }
+
+  addElArray1(): void {
+    const arr = new FormGroup({
+      arr1_str1: new FormControl('ttt', Validators.required),
+      arr1_num1: new FormControl(0, Validators.required),
+    });
+    this.formArray1.push(arr);
   }
 }

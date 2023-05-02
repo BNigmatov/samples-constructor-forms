@@ -1,13 +1,17 @@
 <table width="100%">
   <tr>
-    <td i18n="@@form-label-crm-attr-test-form1-object1-obj1_str1">
-      Label Object 1 - String 1
+    <td width="40%">
+      <ng-container i18n="@@form-label-crm-attr-test-form1-object1-obj1_str1">
+        Label Object 1 - String 1
+      </ng-container>
     </td>
     <td>{{ values.obj1_str1 }}</td>
   </tr>
   <tr *ngIf="values.obj1_num1">
-    <td i18n="@@form-label-crm-attr-test-form1-object1-obj1_num1">
-      Label Object 1 - Number 1
+    <td>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-object1-obj1_num1">
+        Label Object 1 - Number 1
+      </ng-container>
     </td>
     <td>{{ values.obj1_num1 }}</td>
   </tr>

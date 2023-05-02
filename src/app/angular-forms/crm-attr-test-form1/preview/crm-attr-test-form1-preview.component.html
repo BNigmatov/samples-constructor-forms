@@ -1,6 +1,6 @@
 <table width="100%">
   <tr>
-    <td>
+    <td width="40%">
       <ng-container i18n="@@form-label-crm-attr-test-form1-string1"
         >Label String 1</ng-container
       >
@@ -8,19 +8,35 @@
     <td>{{ values.string1 }}</td>
   </tr>
   <tr>
-    <td i18n="@@form-label-crm-attr-test-form1-textarea1">Label Textarea 1</td>
+    <td>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-textarea1"
+        >Label Textarea 1</ng-container
+      >
+    </td>
     <td>{{ values.textarea1 }}</td>
   </tr>
   <tr *ngIf="values.number1">
-    <td i18n="@@form-label-crm-attr-test-form1-number1">Label Number 1</td>
+    <td>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-number1"
+        >Label Number 1</ng-container
+      >
+    </td>
     <td>{{ values.number1 }}</td>
   </tr>
   <tr *ngIf="values.date1">
-    <td i18n="@@form-label-crm-attr-test-form1-date1">Label Date 1</td>
+    <td>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-date1"
+        >Label Date 1</ng-container
+      >
+    </td>
     <td>{{ values.date1 | date }}</td>
   </tr>
   <tr *ngIf="values.select1">
-    <td i18n="@@form-label-crm-attr-test-form1-select1">Label Select 1</td>
+    <td>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-select1"
+        >Label Select 1</ng-container
+      >
+    </td>
     <td>
       {{
         refs.select1 && values.select1
@@ -30,7 +46,11 @@
     </td>
   </tr>
   <tr *ngIf="values.option1">
-    <td i18n="@@form-label-crm-attr-test-form1-option1">Label Radio 1</td>
+    <td>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-option1"
+        >Label Radio 1</ng-container
+      >
+    </td>
     <td>
       {{
         refs.radio1 && values.option1
@@ -49,7 +69,11 @@
   </tr>
   <tr *ngIf="values.array1">
     <td colspan="2">
-      <h3 i18n="@@form-label-crm-attr-test-form1-array1">Label Array 1</h3>
+      <h3>
+        <ng-container i18n="@@form-label-crm-attr-test-form1-array1"
+          >Label Array 1</ng-container
+        >:
+      </h3>
       <div *ngFor="let arr of values.array1">
         <form-preview-sub-crm-attr-test-form1-array1
           [values]="arr"
@@ -58,7 +82,11 @@
     </td>
   </tr>
   <tr *ngIf="values.join1">
-    <td i18n="@@form-label-crm-attr-test-form1-join1">Label Join 1</td>
+    <td>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-join1"
+        >Label Join 1</ng-container
+      >
+    </td>
     <td>{{ values.join1 }}</td>
   </tr>
 </table>
