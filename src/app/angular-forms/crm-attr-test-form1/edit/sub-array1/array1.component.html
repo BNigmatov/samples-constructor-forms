@@ -23,7 +23,7 @@
     />
   </mat-form-field>
 
-  <!-- <mat-form-field appearance="outline" class="form-select">
+  <mat-form-field appearance="outline" class="form-select">
     <mat-label i18n="@@form-label-crm-attr-test-form1-array1-arr1_slct1">
       Label Array 1 - Select 1
     </mat-label>
@@ -38,16 +38,16 @@
         {{ option.title }}
       </mat-option>
     </mat-select>
-  </mat-form-field> -->
+  </mat-form-field>
 
-  <!-- <div class="form-radio">
+  <div class="form-radio">
     <mat-label>
-      <ng-container i18n="@@form-label-crm-attr-test-form1-array1-option1">
+      <ng-container i18n="@@form-label-crm-attr-test-form1-array1-arr1_rdo1">
         Label Array 1 - Radio 1 </ng-container
       >:
     </mat-label>
     <span *ngIf="!options_arr1_rdo1"> Loading...</span>
-    <mat-radio-group formControlName="option1">
+    <mat-radio-group formControlName="arr1_rdo1">
       <mat-radio-button
         *ngFor="let option of options_arr1_rdo1"
         [value]="option.id"
@@ -55,5 +55,5 @@
         {{ option.title }}
       </mat-radio-button>
     </mat-radio-group>
-  </div> -->
+  </div>
 </form>

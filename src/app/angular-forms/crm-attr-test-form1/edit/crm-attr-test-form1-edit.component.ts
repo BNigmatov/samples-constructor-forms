@@ -103,10 +103,14 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
     if (values.array1) {
       this.formArray1.clear();
       for (let arr of values.array1) {
-        this.formArray1.push( new FormGroup({
-          arr1_str1: new FormControl(arr.arr1_str1 || ''),
-          arr1_num1: new FormControl(arr.arr1_num1 || 0),
-        }));
+        this.formArray1.push(
+          new FormGroup({
+            arr1_str1: new FormControl(arr.arr1_str1 || ''),
+            arr1_num1: new FormControl(arr.arr1_num1 || 0),
+            arr1_slct1: new FormControl(arr.arr1_slct1 || 0),
+            arr1_rdo1: new FormControl(arr.arr1_rdo1 || 0),
+          })
+        );
       }
     }
   }
