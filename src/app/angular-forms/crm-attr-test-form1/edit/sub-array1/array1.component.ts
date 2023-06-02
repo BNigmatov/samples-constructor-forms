@@ -43,10 +43,10 @@ export class FormEditSubCrmAttrTestForm1Array1Component implements OnInit {
 
   ngOnInit() {
     if (this.formReady && this.formReady.observers.length > 0) {
-      this.formReady.emit({
-        form: this.form,
-        patch: (vals) => this.patchForm(vals),
-      });
+      // this.formReady.emit({
+      //   form: this.form,
+      //   patch: (vals) => this.patchForm(vals),
+      // });
     }
 
     setTimeout(() => {
