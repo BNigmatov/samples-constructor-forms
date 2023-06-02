@@ -125,7 +125,11 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
 
   initSubArrayForm(name: string, ready: IFlexyFormReady, index: number) {
     console.log(name, ready);
-    // this.formArray1.push(ready.form);
+    if (this.formArray1.length > index) {
+      this.formArray1.controls[index] = ready.form;
+    } else {
+      this.formArray1.push(ready.form);
+    }
   }
 
   openDialogJoin1(): void {
