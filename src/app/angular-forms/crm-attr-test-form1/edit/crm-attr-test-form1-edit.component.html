@@ -111,7 +111,7 @@
         <ng-container *ngFor="let arr of formArray1.controls; let i = index">
           <div [formGroupName]="i">
             <form-edit-sub-crm-attr-test-form1-array1
-              (formReady)="initSubArrayForm('array1', $event)"
+              (formReady)="initSubArrayForm('array1', $event, i)"
             ></form-edit-sub-crm-attr-test-form1-array1>
             <mat-icon (click)="delElArray1(i)">delete_forever</mat-icon>
           </div>

@@ -37,6 +37,8 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
       new FormGroup({
         arr1_str1: new FormControl('arr1_str1'),
         arr1_num1: new FormControl('11111111111111'),
+        arr1_slct1: new FormControl(''),
+        arr1_rdo1: new FormControl(''),
       }),
     ]);
 
@@ -117,8 +119,9 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
     this.form.setControl(name, ready.form);
   }
 
-  initSubArrayForm(name: string, ready: IFlexyFormReady) {
-    this.form.setControl(name, ready.form);
+  initSubArrayForm(name: string, ready: IFlexyFormReady, index: number) {
+    console.log(name, ready);
+    // this.formArray1.push(ready.form);
   }
 
   openDialogJoin1(): void {
