@@ -22,4 +22,38 @@
       i18n-placeholder="@@form-placeholder-crm-attr-test-form1-array1-arr1_num1"
     />
   </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-select">
+    <mat-label i18n="@@form-label-crm-attr-test-form1-array1-arr1_slct1">
+      Label Select 1
+    </mat-label>
+    <mat-select
+      formControlName="arr1_slct1"
+      placeholder=" Placeholder Array 1 - Select 1 "
+      i18n-placeholder="
+        @@form-placeholder-crm-attr-test-form1-array1-arr1_slct1"
+    >
+      <mat-option *ngIf="!options_arr1_slct1"> Loading.... </mat-option>
+      <mat-option *ngFor="let option of options_arr1_slct1" [value]="option.id">
+        {{ option.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="form-radio">
+    <mat-label>
+      <ng-container i18n="@@form-label-crm-attr-test-form1-array1-option1">
+        Label Array 1 - Radio 1 </ng-container
+      >:
+    </mat-label>
+    <span *ngIf="!options_arr1_rdo1"> Loading...</span>
+    <mat-radio-group formControlName="option1">
+      <mat-radio-button
+        *ngFor="let option of options_arr1_rdo1"
+        [value]="option.id"
+      >
+        {{ option.title }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
 </form>

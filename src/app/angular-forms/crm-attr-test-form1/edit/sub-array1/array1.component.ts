@@ -21,8 +21,8 @@ export class FormEditSubCrmAttrTestForm1Array1Component implements OnInit {
 
   form: FormGroup;
 
-  options_select1: any[];
-  options_radio1: any[];
+  options_arr1_slct1: any[];
+  options_arr1_rdo1: any[];
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) {
     this.form = new FormGroup({
@@ -34,6 +34,10 @@ export class FormEditSubCrmAttrTestForm1Array1Component implements OnInit {
         Validators.required,
         Validators.max(999),
       ]),
+      arr1_slct1: new FormControl('', [
+        Validators.required,
+      ]),
+      arr1_rdo1: new FormControl(''),
     });
   }
 
@@ -46,7 +50,7 @@ export class FormEditSubCrmAttrTestForm1Array1Component implements OnInit {
     }
 
     setTimeout(() => {
-      this.options_select1 = [
+      this.options_arr1_slct1 = [
         {
           id: '01',
           title: 'Select 01',
@@ -60,7 +64,7 @@ export class FormEditSubCrmAttrTestForm1Array1Component implements OnInit {
     }, 3_000);
 
     setTimeout(() => {
-      this.options_radio1 = [
+      this.options_arr1_rdo1 = [
         {
           id: '01',
           title: 'Option 01',

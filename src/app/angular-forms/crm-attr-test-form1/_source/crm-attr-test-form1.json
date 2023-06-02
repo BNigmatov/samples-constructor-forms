@@ -79,6 +79,17 @@
           "title": "Label Array 1 - Number 1",
           "placeholder": "Placeholder Array 1 - Number 1",
           "type": "number"
+        },
+        {
+          "name": "arr1_slct1",
+          "title": "Label Array 1 - Select 1",
+          "placeholder": "Placeholder Array 1 - Select 1",
+          "type": "select"
+        },
+        {
+          "name": "arr1_rdo1",
+          "title": "Label Array 1 - Radio 1",
+          "type": "radio"
         }
       ]
     }

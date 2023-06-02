@@ -117,6 +117,10 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
     this.form.setControl(name, ready.form);
   }
 
+  initSubArrayForm(name: string, ready: IFlexyFormReady) {
+    this.form.setControl(name, ready.form);
+  }
+
   openDialogJoin1(): void {
     const dialogRef = this.dialog.open(
       FormEditCrmAttrTestForm1Join1DialogComponent,
