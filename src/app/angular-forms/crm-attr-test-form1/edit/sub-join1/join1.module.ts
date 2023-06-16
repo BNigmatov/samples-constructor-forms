@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FormEditCrmAttrTestForm1Join1DialogComponent } from './join1.component';
+import { FormEditSubCrmAttrTestForm1Join1DialogComponent } from './join1.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -21,8 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
   ],
   declarations: [
-    FormEditCrmAttrTestForm1Join1DialogComponent,
+    FormEditSubCrmAttrTestForm1Join1DialogComponent,
   ],
-  exports: [FormEditCrmAttrTestForm1Join1DialogComponent],
+  exports: [FormEditSubCrmAttrTestForm1Join1DialogComponent],
 })
 export class FormEditSubCrmAttrTestForm1Join1Module {}

@@ -10,7 +10,7 @@ import {
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { IFlexyFormOptions, IFlexyFormReady } from '../../form.interfaces';
-import { FormEditCrmAttrTestForm1Join1DialogComponent } from './sub-join1/join1.component';
+import { FormEditSubCrmAttrTestForm1Join1DialogComponent } from './sub-join1/join1.component';
 
 @Component({
   selector: 'form-edit-crm-attr-test-form1',
@@ -134,7 +134,7 @@ export class FormEditCrmAttrTestForm1Component implements OnInit {
 
   openDialogJoin1(): void {
     const dialogRef = this.dialog.open(
-      FormEditCrmAttrTestForm1Join1DialogComponent,
+      FormEditSubCrmAttrTestForm1Join1DialogComponent,
       {
         data: {
           ppp: 111,
